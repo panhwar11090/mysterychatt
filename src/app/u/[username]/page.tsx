@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { CardHeader, CardContent, Card } from '@/components/ui/card';
 import { useCompletion } from 'ai/react';
+import "../../../app/globals.css"
 import {
   Form,
   FormControl,
@@ -63,7 +64,7 @@ export default function SendMessage() {
   const onSubmit = async (data: z.infer<typeof messageSchema>) => {
     setIsLoading(true);
     try {
-      const response = await axios.post<ApiResponse>('/api/send-message', {
+      const response = await axios.post<ApiResponse>('/api/send-messages', {
         ...data,
         username,
       });

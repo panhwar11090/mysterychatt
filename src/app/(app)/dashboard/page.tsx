@@ -60,6 +60,7 @@ const Dashboard = () => {
     SetIsSwitchLoading(false);
     try {
       const response = await axios.get<ApiResponse>('/api/get-messages');
+      console.log(response)
       setMessages(response.data.messages || []);
       if(refresh){
         toast({
